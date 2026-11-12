@@ -22,8 +22,9 @@ a{color:inherit}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
 /* language switching: content for the inactive language is hidden */
-html[data-lang="en"] [lang="nl"]{display:none !important}
-html[data-lang="nl"] [lang="en"]{display:none !important}
+html:not([data-lang="en"]) [lang="en"],
+html:not([data-lang="nl"]) [lang="nl"],
+html:not([data-lang="pt"]) [lang="pt"]{display:none !important}
 
 /* header */
 header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
@@ -120,12 +121,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <b>Nathalia Quirino</b>
     </a>
     <nav aria-label="Main">
-      <a class="link" href="#skills"><span lang="en">Skills</span><span lang="nl">Vaardigheden</span></a>
-      <a class="link" href="#experience"><span lang="en">Experience</span><span lang="nl">Ervaring</span></a>
+      <a class="link" href="#skills"><span lang="en">Skills</span><span lang="nl">Vaardigheden</span><span lang="pt">Competências</span></a>
+      <a class="link" href="#experience"><span lang="en">Experience</span><span lang="nl">Ervaring</span><span lang="pt">Experiência</span></a>
       <a class="link" href="#contact">Contact</a>
-      <div class="lang" role="group" aria-label="Language / Taal">
+      <div class="lang" role="group" aria-label="Language / Taal / Idioma">
         <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-set-lang="nl" aria-pressed="false">NL</button>
+        <button type="button" data-set-lang="pt" aria-pressed="false">PT</button>
       </div>
     </nav>
   </div>
@@ -135,20 +137,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap hero">
     <div class="hero-grid">
       <div>
-        <p class="eyebrow"><span lang="en">Dental &amp; Orthodontic Assistant · Zaandam</span><span lang="nl">Tandarts- &amp; orthodontie-assistent · Zaandam</span></p>
-        <h1><span lang="en">Orthodontic expertise, ready to support your team.</span><span lang="nl">Orthodontische kennis, klaar om uw team te ondersteunen.</span></h1>
+        <p class="eyebrow"><span lang="en">Dental &amp; Orthodontic Assistant · Zaandam</span><span lang="nl">Tandarts- &amp; orthodontie-assistent · Zaandam</span><span lang="pt">Assistente Odontológica e Ortodôntica · Zaandam</span></p>
+        <h1><span lang="en">Orthodontic expertise, ready to support your team.</span><span lang="nl">Orthodontische kennis, klaar om uw team te ondersteunen.</span><span lang="pt">Experiência em ortodontia, pronta para apoiar a sua equipe.</span></h1>
         <p class="lead">
           <span lang="en">I trained and worked as a dentist and orthodontist in Brazil for over four years. Now based in Zaandam, I'm available straight away as a dental assistant, orthodontic assistant or digital aligner planner.</span>
-          <span lang="nl">Ik heb ruim vier jaar als tandarts en orthodontist in Brazilië gewerkt. Nu woon ik in Zaandam en ben ik direct beschikbaar als tandartsassistent, orthodontie-assistent of digitaal aligner-planner.</span>
+          <span lang="nl">Ik heb ruim vier jaar als tandarts en orthodontist in Brazilië gewerkt. Nu woon ik in Zaandam en ben ik direct beschikbaar als tandartsassistent, orthodontie-assistent of digitaal aligner-planner.</span><span lang="pt">Sou formada e atuei como dentista e ortodontista no Brasil por mais de quatro anos. Agora moro em Zaandam e estou disponível de imediato como assistente odontológica, assistente de ortodontia ou planejadora digital de alinhadores.</span>
         </p>
         <ul class="chips">
-          <li><span lang="en">Available immediately</span><span lang="nl">Direct beschikbaar</span></li>
-          <li><span lang="en">Permanent residence, no sponsorship needed</span><span lang="nl">Permanente verblijfsvergunning, geen sponsoring nodig</span></li>
-          <li><span lang="en">BIG registration in progress</span><span lang="nl">BIG-registratie in behandeling</span></li>
+          <li><span lang="en">Available immediately</span><span lang="nl">Direct beschikbaar</span><span lang="pt">Disponível imediatamente</span></li>
+          <li><span lang="en">Permanent residence, no sponsorship needed</span><span lang="nl">Permanente verblijfsvergunning, geen sponsoring nodig</span><span lang="pt">Residência permanente, sem necessidade de patrocínio de visto</span></li>
+          <li><span lang="en">BIG registration in progress</span><span lang="nl">BIG-registratie in behandeling</span><span lang="pt">Registro BIG em andamento</span></li>
         </ul>
         <div class="btns">
-          <a class="btn" href="#contact"><span lang="en">Get in touch</span><span lang="nl">Neem contact op</span></a>
-          <a class="btn ghost" href="#experience"><span lang="en">See experience</span><span lang="nl">Bekijk ervaring</span></a>
+          <a class="btn" href="#contact"><span lang="en">Get in touch</span><span lang="nl">Neem contact op</span><span lang="pt">Entre em contato</span></a>
+          <a class="btn ghost" href="#experience"><span lang="en">See experience</span><span lang="nl">Bekijk ervaring</span><span lang="pt">Ver experiência</span></a>
         </div>
       </div>
       <div class="hero-mark">
@@ -160,25 +162,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   <section id="skills">
     <div class="wrap">
-      <p class="label"><span lang="en">What I bring</span><span lang="nl">Wat ik meebreng</span></p>
-      <h2><span lang="en">Clinical knowledge and digital skills, at the chairside and behind the screen.</span><span lang="nl">Klinische kennis en digitale vaardigheden, aan de stoel en achter het scherm.</span></h2>
-      <p class="intro"><span lang="en">I connect what happens in the chair with what the lab needs to produce, so treatments run smoothly from diagnosis to delivery.</span><span lang="nl">Ik verbind wat er in de behandelstoel gebeurt met wat het lab nodig heeft, zodat behandelingen soepel verlopen van diagnose tot oplevering.</span></p>
+      <p class="label"><span lang="en">What I bring</span><span lang="nl">Wat ik meebreng</span><span lang="pt">O que ofereço</span></p>
+      <h2><span lang="en">Clinical knowledge and digital skills, at the chairside and behind the screen.</span><span lang="nl">Klinische kennis en digitale vaardigheden, aan de stoel en achter het scherm.</span><span lang="pt">Conhecimento clínico e habilidades digitais, na cadeira e atrás da tela.</span></h2>
+      <p class="intro"><span lang="en">I connect what happens in the chair with what the lab needs to produce, so treatments run smoothly from diagnosis to delivery.</span><span lang="nl">Ik verbind wat er in de behandelstoel gebeurt met wat het lab nodig heeft, zodat behandelingen soepel verlopen van diagnose tot oplevering.</span><span lang="pt">Conecto o que acontece na cadeira com o que o laboratório precisa produzir, para que os tratamentos fluam bem do diagnóstico à entrega.</span></p>
       <div class="cards">
         <article class="card">
           <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8c2.5 6 13.5 6 16 0"/><circle cx="7" cy="12.3" r="1.2"/><circle cx="12" cy="14" r="1.2"/><circle cx="17" cy="12.3" r="1.2"/></svg></div>
-          <h3><span lang="en">Orthodontics</span><span lang="nl">Orthodontie</span></h3>
-          <p><span lang="en">Postgraduate specialist (APCD/FAOA) focused on diagnosis, treatment planning and aligner therapy, with experience in complex cases.</span><span lang="nl">Postdoctoraal specialist (APCD/FAOA) met focus op diagnose, behandelplanning en alignertherapie, met ervaring in complexe casussen.</span></p>
+          <h3><span lang="en">Orthodontics</span><span lang="nl">Orthodontie</span><span lang="pt">Ortodontia</span></h3>
+          <p><span lang="en">Postgraduate specialist (APCD/FAOA) focused on diagnosis, treatment planning and aligner therapy, with experience in complex cases.</span><span lang="nl">Postdoctoraal specialist (APCD/FAOA) met focus op diagnose, behandelplanning en alignertherapie, met ervaring in complexe casussen.</span><span lang="pt">Especialista em Ortodontia (APCD/FAOA), com foco em diagnóstico, planejamento de tratamento e terapia com alinhadores, e experiência em casos complexos.</span></p>
         </article>
         <article class="card">
           <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M7 11c2 2.5 8 2.5 10 0"/></svg></div>
-          <h3><span lang="en">Digital aligner planning</span><span lang="nl">Digitale aligner-planning</span></h3>
-          <p><span lang="en">Hands-on 3D setup and planning work, supporting orthodontists and bridging clinical needs with laboratory production.</span><span lang="nl">Praktische ervaring met 3D-setups en planning, ter ondersteuning van orthodontisten en als brug tussen kliniek en laboratorium.</span></p>
+          <h3><span lang="en">Digital aligner planning</span><span lang="nl">Digitale aligner-planning</span><span lang="pt">Planejamento digital de alinhadores</span></h3>
+          <p><span lang="en">Hands-on 3D setup and planning work, supporting orthodontists and bridging clinical needs with laboratory production.</span><span lang="nl">Praktische ervaring met 3D-setups en planning, ter ondersteuning van orthodontisten en als brug tussen kliniek en laboratorium.</span><span lang="pt">Experiência prática com setups e planejamento em 3D, apoiando ortodontistas e conectando as necessidades clínicas à produção do laboratório.</span></p>
           <div class="tags"><span>Invisalign</span><span>ZDENT</span><span>SouSmile</span></div>
         </article>
         <article class="card">
           <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5M18 14.5c1.8.8 3 2.6 3 5.5"/></svg></div>
-          <h3><span lang="en">Clinic organisation</span><span lang="nl">Praktijkorganisatie</span></h3>
-          <p><span lang="en">Experience leading multidisciplinary teams, keeping clinic standards and ethics, and organising patients and schedules.</span><span lang="nl">Ervaring met het leiden van multidisciplinaire teams, het bewaken van kwaliteit en ethiek, en het organiseren van patiënten en planning.</span></p>
+          <h3><span lang="en">Clinic organisation</span><span lang="nl">Praktijkorganisatie</span><span lang="pt">Gestão de clínica</span></h3>
+          <p><span lang="en">Experience leading multidisciplinary teams, keeping clinic standards and ethics, and organising patients and schedules.</span><span lang="nl">Ervaring met het leiden van multidisciplinaire teams, het bewaken van kwaliteit en ethiek, en het organiseren van patiënten en planning.</span><span lang="pt">Experiência liderando equipes multidisciplinares, zelando pelos padrões e pela ética da clínica e organizando pacientes e agendas.</span></p>
         </article>
       </div>
     </div>
@@ -186,28 +188,28 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   <section id="experience">
     <div class="wrap">
-      <p class="label"><span lang="en">Experience &amp; training</span><span lang="nl">Ervaring &amp; opleiding</span></p>
-      <h2><span lang="en">Over four years of clinical and technical work in Brazil.</span><span lang="nl">Ruim vier jaar klinisch en technisch werk in Brazilië.</span></h2>
+      <p class="label"><span lang="en">Experience &amp; training</span><span lang="nl">Ervaring &amp; opleiding</span><span lang="pt">Experiência e formação</span></p>
+      <h2><span lang="en">Over four years of clinical and technical work in Brazil.</span><span lang="nl">Ruim vier jaar klinisch en technisch werk in Brazilië.</span><span lang="pt">Mais de quatro anos de atuação clínica e técnica no Brasil.</span></h2>
       <ol class="timeline">
         <li>
-          <div class="when">Seven Clinic · <span lang="en">Brazil</span><span lang="nl">Brazilië</span></div>
+          <div class="when">Seven Clinic · <span lang="en">Brazil</span><span lang="nl">Brazilië</span><span lang="pt">Brasil</span></div>
           <div>
-            <h3><span lang="en">Technical Manager</span><span lang="nl">Technisch manager</span></h3>
-            <p><span lang="en">Led multidisciplinary teams, managed financial operations and clinic ethics, and handled complex orthodontic treatments.</span><span lang="nl">Leidde multidisciplinaire teams, beheerde de financiële operatie en de ethiek van de kliniek, en behandelde complexe orthodontische casussen.</span></p>
+            <h3><span lang="en">Technical Manager</span><span lang="nl">Technisch manager</span><span lang="pt">Responsável Técnica</span></h3>
+            <p><span lang="en">Led multidisciplinary teams, managed financial operations and clinic ethics, and handled complex orthodontic treatments.</span><span lang="nl">Leidde multidisciplinaire teams, beheerde de financiële operatie en de ethiek van de kliniek, en behandelde complexe orthodontische casussen.</span><span lang="pt">Liderou equipes multidisciplinares, geriu a parte financeira e a ética da clínica e conduziu tratamentos ortodônticos complexos.</span></p>
           </div>
         </li>
         <li>
-          <div class="when"><span lang="en">Digital planning</span><span lang="nl">Digitale planning</span></div>
+          <div class="when"><span lang="en">Digital planning</span><span lang="nl">Digitale planning</span><span lang="pt">Planejamento digital</span></div>
           <div>
-            <h3><span lang="en">Junior Assistant, Digital Aligner Planning</span><span lang="nl">Junior assistent, digitale aligner-planning</span></h3>
-            <p><span lang="en">Planned aligner cases in 3D software for ZDENT, Invisalign and SouSmile, supporting other orthodontists.</span><span lang="nl">Plande alignercasussen in 3D-software voor ZDENT, Invisalign en SouSmile, ter ondersteuning van andere orthodontisten.</span></p>
+            <h3><span lang="en">Junior Assistant, Digital Aligner Planning</span><span lang="nl">Junior assistent, digitale aligner-planning</span><span lang="pt">Assistente Júnior, Planejamento Digital de Alinhadores</span></h3>
+            <p><span lang="en">Planned aligner cases in 3D software for ZDENT, Invisalign and SouSmile, supporting other orthodontists.</span><span lang="nl">Plande alignercasussen in 3D-software voor ZDENT, Invisalign en SouSmile, ter ondersteuning van andere orthodontisten.</span><span lang="pt">Planejou casos de alinhadores em software 3D para ZDENT, Invisalign e SouSmile, apoiando outros ortodontistas.</span></p>
           </div>
         </li>
         <li>
           <div class="when">APCD / FAOA</div>
           <div>
-            <h3><span lang="en">Postgraduate Specialisation in Orthodontics</span><span lang="nl">Postdoctorale specialisatie orthodontie</span></h3>
-            <p><span lang="en">Diagnosis, treatment planning and aligner therapy.</span><span lang="nl">Diagnose, behandelplanning en alignertherapie.</span></p>
+            <h3><span lang="en">Postgraduate Specialisation in Orthodontics</span><span lang="nl">Postdoctorale specialisatie orthodontie</span><span lang="pt">Especialização em Ortodontia</span></h3>
+            <p><span lang="en">Diagnosis, treatment planning and aligner therapy.</span><span lang="nl">Diagnose, behandelplanning en alignertherapie.</span><span lang="pt">Diagnóstico, planejamento de tratamento e terapia com alinhadores.</span></p>
           </div>
         </li>
       </ol>
@@ -216,26 +218,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   <section id="roles">
     <div class="wrap">
-      <p class="label"><span lang="en">Looking for</span><span lang="nl">Op zoek naar</span></p>
-      <h2><span lang="en">Supporting roles where I can contribute from day one.</span><span lang="nl">Ondersteunende functies waarin ik vanaf dag één kan bijdragen.</span></h2>
+      <p class="label"><span lang="en">Looking for</span><span lang="nl">Op zoek naar</span><span lang="pt">Busco</span></p>
+      <h2><span lang="en">Supporting roles where I can contribute from day one.</span><span lang="nl">Ondersteunende functies waarin ik vanaf dag één kan bijdragen.</span><span lang="pt">Funções de apoio em que eu possa contribuir desde o primeiro dia.</span></h2>
       <div class="roles">
-        <div class="role"><h3><span lang="en">Dental Assistant</span><span lang="nl">Tandartsassistent</span></h3><p><span lang="en">Chairside support, patient care and clinic flow.</span><span lang="nl">Assistentie aan de stoel, patiëntenzorg en praktijkverloop.</span></p></div>
-        <div class="role"><h3><span lang="en">Orthodontic Assistant</span><span lang="nl">Orthodontie-assistent</span></h3><p><span lang="en">Brackets, aligners, records and follow-up appointments.</span><span lang="nl">Brackets, aligners, dossiers en controleafspraken.</span></p></div>
-        <div class="role"><h3><span lang="en">Digital Planner</span><span lang="nl">Digitaal planner</span></h3><p><span lang="en">3D aligner setups and coordination with the lab.</span><span lang="nl">3D-aligner-setups en afstemming met het lab.</span></p></div>
+        <div class="role"><h3><span lang="en">Dental Assistant</span><span lang="nl">Tandartsassistent</span><span lang="pt">Assistente Odontológica</span></h3><p><span lang="en">Chairside support, patient care and clinic flow.</span><span lang="nl">Assistentie aan de stoel, patiëntenzorg en praktijkverloop.</span><span lang="pt">Auxílio na cadeira, atendimento ao paciente e rotina da clínica.</span></p></div>
+        <div class="role"><h3><span lang="en">Orthodontic Assistant</span><span lang="nl">Orthodontie-assistent</span><span lang="pt">Assistente de Ortodontia</span></h3><p><span lang="en">Brackets, aligners, records and follow-up appointments.</span><span lang="nl">Brackets, aligners, dossiers en controleafspraken.</span><span lang="pt">Braquetes, alinhadores, documentação e consultas de manutenção.</span></p></div>
+        <div class="role"><h3><span lang="en">Digital Planner</span><span lang="nl">Digitaal planner</span><span lang="pt">Planejadora Digital</span></h3><p><span lang="en">3D aligner setups and coordination with the lab.</span><span lang="nl">3D-aligner-setups en afstemming met het lab.</span><span lang="pt">Setups 3D de alinhadores e alinhamento com o laboratório.</span></p></div>
       </div>
-      <p class="note"><span lang="en">I'm learning Dutch intensively and working through my BIG registration alongside.</span><span lang="nl">Ik leer intensief Nederlands en werk tegelijk aan mijn BIG-registratie.</span></p>
+      <p class="note"><span lang="en">I'm learning Dutch intensively and working through my BIG registration alongside.</span><span lang="nl">Ik leer intensief Nederlands en werk tegelijk aan mijn BIG-registratie.</span><span lang="pt">Estou estudando holandês intensivamente e, ao mesmo tempo, conduzindo meu processo de registro BIG.</span></p>
     </div>
   </section>
 
   <section id="contact" class="contact">
     <div class="wrap">
       <p class="label">Contact</p>
-      <h2><span lang="en">Let's talk.</span><span lang="nl">Laten we kennismaken.</span></h2>
-      <p class="intro"><span lang="en">Call me or send a WhatsApp message. I'm happy to come by for an introduction or a trial day.</span><span lang="nl">Bel me of stuur een WhatsApp-bericht. Ik kom graag langs voor een kennismaking of een meeloopdag.</span></p>
+      <h2><span lang="en">Let's talk.</span><span lang="nl">Laten we kennismaken.</span><span lang="pt">Vamos conversar.</span></h2>
+      <p class="intro"><span lang="en">Call me or send a WhatsApp message. I'm happy to come by for an introduction or a trial day.</span><span lang="nl">Bel me of stuur een WhatsApp-bericht. Ik kom graag langs voor een kennismaking of een meeloopdag.</span><span lang="pt">Ligue ou mande uma mensagem pelo WhatsApp. Terei prazer em fazer uma visita de apresentação ou um dia de experiência.</span></p>
       <div class="btns">
         <a class="btn" lang="en" href="https://wa.me/31634733065?text=Hi%20Nathalia%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20get%20in%20touch." target="_blank" rel="noopener">Contact me on WhatsApp</a>
         <a class="btn" lang="nl" href="https://wa.me/31634733065?text=Hallo%20Nathalia%2C%20ik%20zag%20je%20website%20en%20wil%20graag%20contact%20opnemen." target="_blank" rel="noopener">Neem contact op via WhatsApp</a>
-        <a class="btn ghost" href="tel:+31634733065"><span lang="en">Call me</span><span lang="nl">Bel mij</span></a>
+        <a class="btn" lang="pt" href="https://wa.me/31634733065?text=Ol%C3%A1%20Nathalia%2C%20vi%20seu%20site%20e%20gostaria%20de%20entrar%20em%20contato." target="_blank" rel="noopener">Fale comigo pelo WhatsApp</a>
+        <a class="btn ghost" href="tel:+31634733065"><span lang="en">Call me</span><span lang="nl">Bel mij</span><span lang="pt">Me ligue</span></a>
         <a class="btn ghost" href="https://www.linkedin.com/in/nathalia-quirino-le-roy-606470336/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4z"/></svg>LinkedIn</a>
       </div>
     </div>
@@ -245,7 +248,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <footer>
   <div class="wrap">
     <span>© <span id="yr">2026</span> Nathalia Quirino</span>
-    <span>Zaandam, <span lang="en">Netherlands</span><span lang="nl">Nederland</span> · <a href="https://www.linkedin.com/in/nathalia-quirino-le-roy-606470336/" target="_blank" rel="noopener">LinkedIn</a></span>
+    <span>Zaandam, <span lang="en">Netherlands</span><span lang="nl">Nederland</span><span lang="pt">Holanda</span> · <a href="https://www.linkedin.com/in/nathalia-quirino-le-roy-606470336/" target="_blank" rel="noopener">LinkedIn</a></span>
   </div>
 </footer>
 
@@ -253,12 +256,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 (function(){
   var root=document.documentElement, btns=document.querySelectorAll('[data-set-lang]');
   function set(l){
-    root.setAttribute('data-lang',l); root.setAttribute('lang',l);
+    root.setAttribute('data-lang',l); root.setAttribute('lang', l==='pt' ? 'pt-BR' : l);
     btns.forEach(function(b){b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang')===l));});
     try{localStorage.setItem('nq-lang',l);}catch(e){}
   }
   var saved=null; try{saved=localStorage.getItem('nq-lang');}catch(e){}
-  set(saved || ((navigator.language||'').toLowerCase().indexOf('nl')===0 ? 'nl' : 'en'));
+  var nav=(navigator.language||'').toLowerCase();
+  if(saved!=='en'&&saved!=='nl'&&saved!=='pt') saved=null;
+  set(saved || (nav.indexOf('nl')===0 ? 'nl' : nav.indexOf('pt')===0 ? 'pt' : 'en'));
   btns.forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-set-lang'));});});
   var h=document.querySelector('header');
   addEventListener('scroll',function(){h.classList.toggle('scrolled',scrollY>8);},{passive:true});
